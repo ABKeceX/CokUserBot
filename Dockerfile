@@ -1,11 +1,11 @@
-FROM abkecex/cokuserbot:buster
+FROM abkecex/CokUserBot:buster
 
-RUN git clone -b CokUserBot https://github.com/ABKeceX/CokUserBot /home/cokuserbot/ \
-    && chmod 777 /home/cokuserbot \
-    && mkdir /home/cokuserbot/bin/
+RUN git clone -b CokUserBot https://github.com/ABKeceX/CokUserBot /home/CokUserBot/ \
+    && chmod 777 /home/CokUserBot \
+    && mkdir /home/CokUserBot/bin/
 
 COPY ./sample_config.env ./config.env* /home/cokuserbot/
 
-WORKDIR /home/cokuserbot/
+WORKDIR /home/CokUserBot/
 
 CMD ["python3", "-m", "userbot"]
