@@ -43,6 +43,6 @@ jobs:
           commit_message: 'CokUserBot: auto fixes'
           commit_options: '--no-verify --signoff'
           repository: .
-          commit_user_name: ABKeceX
+          commit_user_name: CokUserBot
           commit_user_email: zulfhanmt@gmail.com
           commit_author: ABKeceX <zulfhanmt@gmail.com>
