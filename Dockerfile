@@ -1,4 +1,4 @@
-FROM abkecex/CokUserBot:buster
+FROM ABKeceX/CokUserBot:buster
 
 RUN git clone -b CokUserBot https://github.com/ABKeceX/CokUserBot /home/CokUserBot/ \
     && chmod 777 /home/CokUserBot \
