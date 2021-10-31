@@ -12,7 +12,7 @@ import time
 from datetime import datetime
 import psutil
 
-from userbot import ALIVE_LOGO, ALIVE_NAME, BOT_VER, CMD_HELP, RAM_TEKS_KOSTUM, IG_ALIVE, REPO_NAME, GROUP_LINK, StartTime, bot
+from userbot import ALIVE_LOGO, ALIVE_NAME, CMD_HELP, GROUP_LINK, RAM_TEKS_KOSTUM, StartTime, bot
 from userbot.events import register
 
 
@@ -143,7 +143,7 @@ async def bot_ver(event):
             stderr=asyncPIPE,
         )
         stdout, stderr = await ver.communicate()
-        verout = str(stdout.decode().strip()) + str(stderr.decode().strip())
+        str(stdout.decode().strip()) + str(stderr.decode().strip())
 
         rev = await asyncrunapp(
             "git",
@@ -376,14 +376,13 @@ async def amireallyalivereset(ureset):
 
 CMD_HELP.update({
     "alive":
-         "  •  **Perintah :** `.alive` atau `.on`\
+    "  •  **Perintah :** `.alive` atau `.on`\
         \n  •  **Fungsi : **Menampilkan Alive Bot.**\
         \n\n  •  **Perintah :** `.calive` atau `.con`\
         \n  •  **Fungsi : **Menampilkan Alive CokBot.**\
         \n\n  •  **Perintah :** `.cok` atau `.cokbot`\
         \n  •  **Fungsi : **Tiga2nya sama saja.**."
 })
-
 
 
 CMD_HELP.update({
