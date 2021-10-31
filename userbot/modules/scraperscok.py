@@ -235,6 +235,7 @@ async def moni(event):
     else:
         return await event.edit("`Invalid syntax.`")
 
+
 @register(outgoing=True, pattern=r"^\.google (.*)")
 async def gsearch(q_event):
     match = q_event.pattern_match.group(1)
@@ -722,6 +723,7 @@ async def ocr(event):
                          )
     os.remove(downloaded_file_name)
 
+
 @register(pattern="^.ss (.*)", outgoing=True)
 async def capture(url):
     """ For .ss command, capture a website's screenshot and send the photo. """
@@ -1159,6 +1161,7 @@ def gdrive(url: str) -> str:
             return reply
     reply += f'[{name}]({dl_url})\n'
     return reply
+
 
 def zippy_share(url: str) -> str:
     """ ZippyShare direct links generator
