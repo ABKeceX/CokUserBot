@@ -3,7 +3,7 @@ FROM xluxz/geezproject:buster
 # CokUserBot
 # Cok-UserBot
 
-RUN git clone -b CokUserBot https://github.com/ABKeceX/Cok-UserBot /root/userbot
+RUN git clone -b CokUserBot https://github.com/ABKeceX/CokUserBot /root/userbot
 RUN mkdir /root/userbot/.bin
 RUN pip install --upgrade pip setuptools
 WORKDIR /root/userbot
