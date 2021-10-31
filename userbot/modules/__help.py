@@ -4,7 +4,7 @@
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-#
+# Rama ganteng
 # SedenUserBot is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -18,6 +18,7 @@
 
 import logging
 
+
 from userbot import BOT_USERNAME
 from userbot.events import register
 
@@ -26,21 +27,21 @@ logging.basicConfig(
     level=logging.WARNING)
 
 
-@register(outgoing=True, pattern=r"^\.helpme")
+@register(outgoing=True, pattern=r"^\.chelp")
 async def yardim(event):
     try:
         tgbotusername = BOT_USERNAME
         if tgbotusername is not None:
-            results = await event.client.inline_query(tgbotusername, "@UserButt")
+            results = await event.client.inline_query(tgbotusername, "@Ram_ubot")
             await results[0].click(
                 event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
             )
             await event.delete()
         else:
             await event.edit(
-                "**Bot Tidak Bekerja, silahkan set the Bot Token and Username yang bener. Moodule dihentikan..**"
+                "`Bot tidak berfungsi! Harap setel Token Bot dan Nama Pengguna dengan benar. Modul telah dihentikan.`"
             )
     except Exception:
         return await event.edit(
-            "**You cannot send inline results in this chat (caused by SendInlineBotResultRequest)**"
+            "`Anda tidak dapat Menggunakan Perintah .chelp, Bisa Jadi Grup Ini tidak Mensupport nya (Mungkin Anda Belum Menghidupakan Inline Mode Dan Inline Location Data)`"
         )
