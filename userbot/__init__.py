@@ -5,9 +5,6 @@
 # Ported @MaafGausahSokap / JANGAN DI APUS BABI
 """Userbot initialization."""
 
-from userbot import (
-    ALIVE_NAME
-)
 import os
 import time
 import re
@@ -408,6 +405,9 @@ AFKREASON = None
 ZALG_LIST = {}
 
 # Import Userbot - Ported by RAMADHANI892
+from userbot import (
+    ALIVE_NAME
+)
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
