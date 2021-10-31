@@ -33,7 +33,7 @@ async def get_full_user(event):
             user_obj = await event.client.get_entity(user)
         except Exception as err:
             return await event.edit("`Terjadi Kesalahan... Mohon Lapor Ke [『A̶̢͛̐͒͛̐̒̐̌ ̸̝͎̦́̔͠Β̸͌͂̑̆𖣘』](https://t.me/yangmutebabi)", str(err))
-    return user_obj, extra 
+    return user_obj, extra
 
 
 async def get_user_from_id(user, event):
@@ -79,7 +79,7 @@ async def handler(tele):
 
 @register(outgoing=True, pattern="^.gban(?: |$)(.*)")
 async def gben(userbot):
-    chat = await userbot.get_chat()
+    await userbot.get_chat()
     dc = userbot
     sender = await dc.get_sender()
     me = await dc.client.get_me()
@@ -143,7 +143,6 @@ async def gben(userbot):
         f"╭乂╼━━━━━━𖣘━━━━━━━乂\n┣𖣘 **Perintah:** `{ALIVE_NAME}`\n┣𖣘 **Pengguna:** [{user.first_name}](tg://user?id={user.id})\n┣𖣘 **Aksi:** `Global Banned`\n`ㅤㅤSupport By 乂𝗖𝗼𝗸-𝗨𝘀𝗲𝗿𝗯𝗼𝘁乂`\n╰乂╼━━━━━━𖣘━━━━━━━乂"
     )
 
-
     if BOTLOG:
         await userbot.client.send_message(
             BOTLOG_CHATID,
@@ -151,11 +150,12 @@ async def gben(userbot):
             f"PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n"
             f"GRUP: {userbot.chat.title}(`{userbot.chat_id}`)"
             f"Alasan: `{reason}`",
-     )
+        )
+
 
 @register(outgoing=True, pattern="^.ungban(?: |$)(.*)")
 async def gunben(userbot):
-    chat = await userbot.get_chat()
+    await userbot.get_chat()
     dc = userbot
     sender = await dc.get_sender()
     me = await dc.client.get_me()
@@ -223,9 +223,9 @@ async def gunben(userbot):
             "#UNGBAN\n"
             f"PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n"
             f"GRUP: {userbot.chat.title}(`{userbot.chat_id}`)",
-     )
-        
-        
+        )
+
+
 CMD_HELP.update({
     "gban": "\
 **Modules:** __Global Banned__\n\n**Perintah:** `.gban`\
