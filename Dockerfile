@@ -1,5 +1,5 @@
 # Using Python Slim-Buster
-FROM ABKeceX/CokUserBot:buster
+FROM abkecex/cokuserbot:buster
 # CokUserBot
 # Cok-UserBot
 
