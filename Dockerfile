@@ -1,5 +1,5 @@
 # Using Python Slim-Buster
-FROM docker push abkecex/cokuserbot:cokuserbot
+FROM xluxz/geezproject:buster
 # CokUserBot
 # Cok-UserBot
 
