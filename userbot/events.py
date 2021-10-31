@@ -3,7 +3,8 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
-"""Userbot module for managing events. One of the main components of the userbot."""
+""" Userbot module for managing events.
+ One of the main components of the userbot. """
 
 
 import sys
@@ -61,6 +62,9 @@ def register(**args):
                 return
             if not LOGSPAMMER:
                 check.chat_id
+            else:
+                pass
+
             if not trigger_on_fwd and check.fwd_from:
                 return
 
@@ -74,8 +78,14 @@ def register(**args):
             try:
                 await func(check)
 
+            # Thanks to @kandnub for this HACK.
+            # Raise StopPropagation to Raise StopPropagation
+            # This needed for AFK to working properly
+
             except events.StopPropagation:
                 raise events.StopPropagation
+            # This is a gay exception and must be passed out. So that it doesnt
+            # spam chats
             except KeyboardInterrupt:
                 pass
             except BaseException:
@@ -87,22 +97,23 @@ def register(**args):
                 if not disable_errors:
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
-                    text = "**乂 COKK-USERBOT ERROR REPORT 乂**\n\n"
-                    link = "[Support](https://t.me/yangmutebabi)"
-                    text += "Jika mau, Anda bisa melaporkan error ini, "
-                    text += f"Cukup forward saja pesan ini ke {link}.\n\n"
+                    text = "**COK-USERBOT ERROR**\n"
+                    link = "Silahkan chat: @yangmutebahi"
+                    text += "Untuk melaporkan kesalahan"
+                    text += f"- tinggal teruskan pesan ini {link}.\n"
+                    text += "Rama Siap Membantu Kamu\n"
 
                     ftext = "========== DISCLAIMER =========="
-                    ftext += "\nFile ini HANYA diupload di sini,"
-                    ftext += "\nkami hanya mencatat fakta error dan tanggal,"
-                    ftext += "\nkami menghormati privasi Anda."
-                    ftext += "\nJika mau, Anda bisa melaporkan error ini,"
-                    ftext += "\ncukup forward saja pesan ini ke @yangmutebabi"
-                    ftext += "\n================================\n\n"
+                    ftext += "\nThis file uploaded ONLY here,"
+                    ftext += "\nwe logged only fact of error and date,"
+                    ftext += "\nwe respect your privacy,"
+                    ftext += "\nyou may not report this error if you've"
+                    ftext += "\nany confidential data here, no one will see your data\n"
+                    ftext += "================================\n\n"
                     ftext += "--------BEGIN USERBOT TRACEBACK LOG--------\n"
-                    ftext += "\nTanggal : " + date
-                    ftext += "\nChat ID : " + str(check.chat_id)
-                    ftext += "\nUser ID : " + str(check.sender_id)
+                    ftext += "\nDate: " + date
+                    ftext += "\nChat ID: " + str(check.chat_id)
+                    ftext += "\nSender ID: " + str(check.sender_id)
                     ftext += "\n\nEvent Trigger:\n"
                     ftext += str(check.text)
                     ftext += "\n\nTraceback info:\n"
@@ -113,7 +124,7 @@ def register(**args):
 
                     command = "git log --pretty=format:\"%an: %s\" -10"
 
-                    ftext += "\n\n\n10 commits Terakhir:\n"
+                    ftext += "\n\n\nLast 10 commits:\n"
 
                     process = await asyncsubshell(command,
                                                   stdout=asyncsub.PIPE,
@@ -124,8 +135,12 @@ def register(**args):
 
                     ftext += result
 
-                    with open("error.log", "w+") as file:
-                        file.write(ftext)
+                    file = open("error.log", "w+")
+                    file.write(ftext)
+                    file.close()
+
+            else:
+                pass
 
         if not disable_edited:
             bot.add_event_handler(wrapper, events.MessageEdited(**args))
