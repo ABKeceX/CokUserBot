@@ -169,7 +169,6 @@ async def run_cmd(cmd: list) -> tuple[bytes, bytes]:
     return t_resp, e_resp
 
 
-
 async def edit_delete(event, text, time=None, parse_mode=None, link_preview=None):
     parse_mode = parse_mode or "md"
     link_preview = link_preview or False
@@ -189,8 +188,6 @@ async def edit_delete(event, text, time=None, parse_mode=None, link_preview=None
         )
     await asyncio.sleep(time)
     return await newevent.delete()
-
-
 
 
 def post_to_telegraph(title, html_format_content):
