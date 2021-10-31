@@ -1,11 +1,17 @@
+# Using Python Slim-Buster
 FROM ABKeceX/CokUserBot:buster
+# CokUserBot
+# Cok-UserBot
 
-RUN git clone -b CokUserBot https://github.com/ABKeceX/CokUserBot /home/CokUserBot/ \
-    && chmod 777 /home/CokUserBot \
-    && mkdir /home/CokUserBot/bin/
+RUN git clone -b CokUserBot https://github.com/ABKeceX/Cok-UserBot /root/userbot
+RUN mkdir /root/userbot/.bin
+RUN pip install --upgrade pip setuptools
+WORKDIR /root/userbot
 
-COPY ./sample_config.env ./config.env* /home/CokUserBot/
+#Install python requirements
+RUN pip3 install -r https://raw.githubusercontent.com/ABKeceX/CokUserBot/CokUserBot/requirements.txt
 
-WORKDIR /home/CokUserBot/
+EXPOSE 80 443
 
-CMD ["python3", "-m", "userbot"]
+# Finalization
+CMD ["python3","-m","userbot"]
