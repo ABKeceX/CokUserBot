@@ -6,6 +6,7 @@ from userbot.events import register
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
+
 @register(outgoing=True, pattern='^P(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
@@ -120,7 +121,6 @@ async def typewriter(typew):
     await typew.edit("**Gak keren lu begitu tolol, kuburan bapak lu gw gali buat dijadiin kolam renang anak paud.Cuihhhhh!!!**")
 
 
-
 @register(outgoing=True, pattern='^I(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
@@ -146,7 +146,6 @@ async def typewriter(typew):
                      "𝐀𝐃𝐌𝐈𝐍 :"
                      "\n@DENSUSS_86 @NOTHINGqqqq")
 
-                    
 
 CMD_HELP.update({
     "salam":
