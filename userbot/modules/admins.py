@@ -29,15 +29,8 @@ from telethon.tl.types import (
     MessageMediaPhoto,
     PeerChat,
 )
-from telethon.tl.types import (
-    ChannelParticipantsAdmins,
-    ChatAdminRights,
-    ChatBannedRights,
-    MessageEntityMentionName,
-    MessageMediaPhoto,
-)
 
-from userbot import ALIVE_NAME, BOTLOG, BOTLOG_CHATID, CMD_HELP, DEVS
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 from userbot.events import register
 
 # =================== CONSTANT ===================
@@ -47,11 +40,11 @@ NO_ADMIN = "`Maaf Anda Bukan Admin:)`"
 NO_PERM = "`Maaf Anda Tidak Mempunyai Izin!`"
 NO_SQL = "`Berjalan Pada Mode Non-SQL`"
 
-CHAT_PP_CHANGED = "`Berhasil Mengubah Profil Grup Cok`"
+CHAT_PP_CHANGED = "`Berhasil Mengubah Profil Gru anjing`"
 CHAT_PP_ERROR = (
     "`Ada Masalah Dengan Memperbarui Foto,`"
     "`Mungkin Karna Anda Bukan Admin,`"
-    "`Atau Tidak Mempunyai Izin Cok.`"
+    "`Atau Tidak Mempunyai Izin.`"
 )
 INVALID_MEDIA = "`Media Tidak Valid`"
 
