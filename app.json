@@ -1,11 +1,17 @@
 {
   "name": "CokUserBot",
-  "description": "[CokUserBot] Userbot Telegram yang digunakan untuk kesenangan",
+  "description": "[CokUserBot] USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM (‼️JANGAN DISALAH GUNAKAN‼️).",
   "logo": "https://telegra.ph/file/1cdbbd432ccb206eb4c9b.jpg",
-  "keywords": ["telegram", "userbot", "cokuserbot", "modular", "python"],
-  "repository": "https://github.com/ABKeceX/CokUserBot",
+  "keywords": [
+    "telegram",
+    "userbot",
+    "plugin",
+    "modular",
+    "productivity"
+  ],
+  "repository": "https://t.me/yangmutebabi",
   "telegram": "https://t.me/yangmutebabi",
-  "For Support": "https://t.me/yangmutebabi",
+  "success_url": "https://t.me/ExPsychopat",
   "stack": "container",
   "env": {
     "API_KEY": {
