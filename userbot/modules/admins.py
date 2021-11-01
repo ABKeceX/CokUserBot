@@ -29,12 +29,10 @@ from telethon.tl.types import (
     MessageMediaPhoto,
     PeerChat,
 )
-from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import (
     ChannelParticipantsAdmins,
     ChatAdminRights,
     ChatBannedRights,
-    InputChatPhotoEmpty,
     MessageEntityMentionName,
     MessageMediaPhoto,
 )
@@ -84,7 +82,6 @@ MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=True)
 
 UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 # ================================================
-
 
 
 @register(outgoing=True, pattern=r"^\.setgpic$")
@@ -283,7 +280,6 @@ async def ban(bon):
             f"PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n"
             f"GRUP: {bon.chat.title}(`{bon.chat_id}`)",
         )
-
 
 
 @register(outgoing=True, pattern=r"^\.unban(?: |$)(.*)")
@@ -509,7 +505,7 @@ async def ungmoot(un_gmute):
             )
 
 
-@register(outgoing=True, pattern=r"^\.gmute(?: |$)(.*)") 
+@register(outgoing=True, pattern=r"^\.gmute(?: |$)(.*)")
 async def gspider(gspdr):
     # Admin or creator check
     chat = await gspdr.get_chat()
@@ -555,8 +551,6 @@ async def gspider(gspdr):
                 f"PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n"
                 f"GRUP: {gspdr.chat.title}(`{gspdr.chat_id}`)",
             )
-
-
 
 
 @register(outgoing=True, pattern=r"^\.zombies(?: |$)(.*)", groups_only=False)
